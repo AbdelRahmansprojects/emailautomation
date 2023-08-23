@@ -60,10 +60,10 @@ import openai
 
 # driver.quit()
 
-openai.api_key="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"
+# openai.api_key="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"
 
-completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Give me 3 ideas for apps I could build with openai apis "}])
-print(completion.choices[0].message.content)
+# completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "Give me 3 ideas for apps I could build with openai apis "}])
+# print(completion.choices[0].message.content)
 
 imap_server = "imap.gmail.com"
 username = "mycoolaitest@gmail.com"
@@ -110,37 +110,37 @@ while True:
             email_content = get_text_content(msg)
             email_content = extract_text_before_html(email_content)
 
-            prompt = f"Given the following newsletter content:\n\n{email_content}\n\nPlease provide suggestions on how to improve it."
-            prompt2 = "Generate a personalized compliment for [Your Name]"
+            # prompt = f"Given the following newsletter content:\n\n{email_content}\n\nPlease provide suggestions on how to improve it."
+            # prompt2 = "Generate a personalized compliment for [Your Name]"
 
-            response = openai.Completion.create(
-                engine="davinci",  # Choose the appropriate engine
-                prompt=prompt,
-                max_tokens=50  # Adjust as needed
-            )
+            # response = openai.Completion.create(
+            #     engine="davinci",  # Choose the appropriate engine
+            #     prompt=prompt,
+            #     max_tokens=50  # Adjust as needed
+            # )
 
-            response2 = openai.Completion.create(
-                engine="davinci",  # Choose the appropriate engine
-                prompt=prompt2,
-                max_tokens=10  # Adjust as needed
-            )
+            # response2 = openai.Completion.create(
+            #     engine="davinci",  # Choose the appropriate engine
+            #     prompt=prompt2,
+            #     max_tokens=10  # Adjust as needed
+            # )
 
-            improvement_suggestions = response.choices[0].text.strip()
-            compliment = response2.choices[0].text.strip()
+            # improvement_suggestions = response.choices[0].text.strip()
+            # compliment = response2.choices[0].text.strip()
 
-            print("Improvement Suggestions:")
-            print(improvement_suggestions)
+            # print("Improvement Suggestions:")
+            # print(improvement_suggestions)
 
-            print("Compliment:")
-            print(compliment)
+            # print("Compliment:")
+            # print(compliment)
 
 
             print(f"Content: {email_content}")
 
             response_subject = "Re: Newsletter"
-            response_text = f"Hey \n, {compliment} but I saw that there were some mistakes and things that could be improved for example {improvement_suggestions} so I would like to offer you an opportunity to partner with me I will increase your sales, help make your newsletter better, if that's something you would be intrested in please message me on whatsapp 07405187555 or Reply to this email"
+            # response_text = f"Hey \n, {compliment} but I saw that there were some mistakes and things that could be improved for example {improvement_suggestions} so I would like to offer you an opportunity to partner with me I will increase your sales, help make your newsletter better, if that's something you would be intrested in please message me on whatsapp 07405187555 or Reply to this email"
 
-            response_msg = f"Subject: {response_subject}\n\n{response_text}"
+            response_msg = f"Subject: {response_subject}\n\n{email_content}"
 
 
             with smtplib.SMTP(smtp_server, smtp_port) as server:
