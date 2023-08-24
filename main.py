@@ -65,7 +65,7 @@ driver.quit()
 
 openai.api_key=""
 
-imap_server = ""
+imap_server = "imap.gmail.com"
 username = ""
 password = ""
 
